@@ -1,11 +1,11 @@
 "use client";
 
 /**
- * Get Started — embedded Google Form with Employer / Candidate tabs.
+ * Get Started - embedded Google Form with Employer / Candidate tabs.
  * Styling: get-started-form-section.css (vanilla CSS, no Tailwind).
  */
 
-import { Suspense, useCallback, useEffect, useState } from "react";
+import { Suspense, useCallback, useEffect, useState, startTransition } from "react";
 import { useSearchParams } from "next/navigation";
 import { GOOGLE_FORM_EMBED_URL, GOOGLE_FORM_SHORT_URL } from "@/lib/google-form";
 import "./get-started-form-section.css";
@@ -23,14 +23,32 @@ function GetStartedFormSectionInner() {
   const [iframeLoaded, setIframeLoaded] = useState(false);
   const [contextSwitching, setContextSwitching] = useState(false);
 
-  // URL: ?type=employer | ?type=candidate
+  // URL: ?type=employer | ?type=candidate | ?type=internship (internship → candidate tab)
   useEffect(() => {
     const t = searchParams.get("type");
-    if (t === "employer" || t === "employers") {
-      setAudience("employer");
-    } else if (t === "candidate" || t === "candidates") {
-      setAudience("candidate");
-    }
+    startTransition(() => {
+      if (t === "employer" || t === "employers") {
+        setAudience("employer");
+      } else if (
+        t === "candidate" ||
+        t === "candidates" ||
+        t === "internship" ||
+        t === "intern"
+      ) {
+        setAudience("candidate");
+      }
+    });
+  }, [searchParams]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.location.hash !== "#get-started-form") return;
+    const el = document.getElementById("get-started-form");
+    if (!el) return;
+    const scroll = () => el.scrollIntoView({ behavior: "smooth", block: "start" });
+    scroll();
+    const t = window.setTimeout(scroll, 280);
+    return () => window.clearTimeout(t);
   }, [searchParams]);
 
   const selectAudience = useCallback((next: Audience) => {
@@ -46,6 +64,7 @@ function GetStartedFormSectionInner() {
 
   return (
     <section
+      id="get-started-form"
       className="get-started-form-section"
       aria-labelledby="get-started-title"
     >
@@ -60,7 +79,7 @@ function GetStartedFormSectionInner() {
         </header>
 
         <p className="get-started-form-note">
-          One short form for everyone—we route your request based on whether you&apos;re hiring or job-seeking.
+          One short form for everyone-we route your request based on whether you&apos;re hiring or job-seeking.
         </p>
 
         <div
@@ -128,7 +147,7 @@ function GetStartedFormSectionInner() {
 
             {/* Same form for both tabs; context copy above personalizes the experience */}
             <iframe
-              title="JuneHires — Get started form"
+              title="JuneHires - Get started form"
               className="get-started-iframe"
               src={GOOGLE_FORM_EMBED_URL}
               onLoad={onIframeLoad}

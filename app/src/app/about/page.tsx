@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import WhyJuneHire from "@/components/sections/WhyJuneHire";
 
 export const metadata: Metadata = {
-    title: "About Us — Our Story & Values",
+    title: "About Us - Our Story & Values",
     description:
         "JuneHires is a people-first hiring agency dedicated to connecting great talent with great companies. Learn about our mission, values, and the team behind every placement.",
     keywords: [
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         "hiring agency story",
     ],
     openGraph: {
-        title: "About Us — Our Story & Values | JuneHires",
+        title: "About Us - Our Story & Values | JuneHires",
         description:
             "People-first hiring done right. Learn about JuneHires' mission, values, and commitment to every client and candidate.",
         url: "https://www.junehires.com/about",
@@ -32,15 +32,15 @@ const faqs = [
     },
     {
         q: "How quickly can I hire someone?",
-        a: "Our recruitment team typically presents 3–5 pre-qualified candidates within 5–10 days. 92% of our clients hire from the first shortlist.",
+        a: "Our recruitment team typically presents 3–5 pre-qualified candidates within 5–10 days. 87% of our clients hire from the first shortlist.",
     },
     {
         q: "Will they work in my timezone?",
-        a: "Yes — absolutely. Working during your business hours is a requirement we verify with all candidates during our screening process.",
+        a: "Yes - absolutely. Working during your business hours is a requirement we verify with all candidates during our screening process.",
     },
     {
         q: "What happens if I'm not happy with my hire?",
-        a: "We offer a replacement guarantee with no time limitation. If at any point you're not satisfied, we'll restart the search at no additional fee.",
+        a: "We offer a replacement guarantee with one year. If at any point you're not satisfied, we'll restart the search at no additional fee.",
     },
     {
         q: "Are there any long-term contracts?",
@@ -68,7 +68,7 @@ export default function AboutPage() {
             {/* FAQ Section */}
             <section className="faq-section" id="faq">
                 <div className="container">
-                    <div style={{ textAlign: "center", maxWidth: 560, margin: "0 auto 48px" }}>
+                    <div className="section-intro-block section-intro-block--560">
                         <span className="eyebrow" style={{ justifyContent: "center" }}>
                             <span className="eyebrow-dot" />
                             FAQ
@@ -81,7 +81,7 @@ export default function AboutPage() {
 
                     <div className="faq-list">
                         {faqs.map((faq, i) => (
-                            <details key={i} className="faq-item" id={`faq-${i}`}>
+                            <details key={i} className="faq-item" id={`faq-${i}`} name="about-faq">
                                 <summary className="faq-question">
                                     <span>{faq.q}</span>
                                     <span className="faq-toggle">+</span>

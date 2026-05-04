@@ -27,14 +27,14 @@ export default function CTABanner() {
 
                 <h2
                     className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight"
-                    style={{ fontFamily: "Syne, sans-serif" }}
+                    style={{ fontFamily: "var(--font-syne), sans-serif" }}
                 >
                     Ready to Scale With{" "}
                     <span className="gradient-text-amber">World-Class Talent?</span>
                 </h2>
 
                 <p className="text-[#8A8A9A] text-lg mb-10 leading-relaxed">
-                    Tell us your name, email, and what you need — we&apos;ll follow up fast. Same short
+                    Tell us your name, email, and what you need - we&apos;ll follow up fast. Same short
                     form we use on our contact page.
                 </p>
 
@@ -56,7 +56,6 @@ export default function CTABanner() {
 
                 {/* Trust signals */}
                 <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-[#6A6A85]">
-                    <span className="flex items-center gap-1.5"><span className="text-[#F5A623]">✓</span> No contracts</span>
                     <span className="flex items-center gap-1.5"><span className="text-[#F5A623]">✓</span> No hidden fees</span>
                     <span className="flex items-center gap-1.5"><span className="text-[#F5A623]">✓</span> Replacement guarantee</span>
                     <span className="flex items-center gap-1.5"><span className="text-[#F5A623]">✓</span> Hire in &lt; 7 days</span>

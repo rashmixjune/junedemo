@@ -14,7 +14,7 @@ export default function HowItWorks() {
                     badge="The Process"
                     title="Hire Your A-Player in "
                     highlight="4 Simple Steps"
-                    subtitle="We do the heavy lifting — from sourcing to screening. You just show up for interviews and pick your favourite."
+                    subtitle="We do the heavy lifting - from sourcing to screening. You just show up for interviews and pick your favourite."
                 />
 
                 <div className="relative mt-16">
@@ -42,7 +42,7 @@ export default function HowItWorks() {
                                         </div>
                                     </div>
 
-                                    <h3 className="text-lg font-bold text-white mb-3 group-hover:text-[#F5A623] transition-colors duration-300" style={{ fontFamily: 'Syne, sans-serif' }}>
+                                    <h3 className="text-lg font-bold text-white mb-3 group-hover:text-[#F5A623] transition-colors duration-300" style={{ fontFamily: "var(--font-syne), sans-serif" }}>
                                         {step.title}
                                     </h3>
                                     <p className="text-[#6A6A85] text-sm leading-relaxed">
@@ -72,7 +72,7 @@ export default function HowItWorks() {
                 >
                     <p className="text-[#6A6A85] text-sm">
                         Average time from brief to onboarding:{" "}
-                        <span className="text-[#F5A623] font-semibold">under 7 days.</span>
+                        <span className="text-[#F5A623] font-semibold">under 30 days.</span>
                     </p>
                 </motion.div>
             </div>

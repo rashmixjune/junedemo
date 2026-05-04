@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+import { GOOGLE_FORM_SHORT_URL } from "@/lib/google-form";
 
 const features = [
     {
@@ -17,13 +19,13 @@ const features = [
         icon: "✦",
         bg: "var(--blue-pale)",
         title: "Zero Experience Needed",
-        desc: "No prior experience required — just a ready-to-learn attitude. If you're eager, we'll guide you every step of the way.",
+        desc: "No prior experience required - just a ready-to-learn attitude. If you're eager, we'll guide you every step of the way.",
     },
     {
         icon: "✦",
         bg: "var(--sage-pale)",
         title: "Completely Free",
-        desc: "Internship with JuneHires is 100% free — built for HR and EA profiles starting their careers and hungry for real exposure.",
+        desc: "Internship with JuneHires is 100% free - built for HR and EA profiles starting their careers and hungry for real exposure.",
     },
 ];
 
@@ -37,17 +39,21 @@ export default function Hub() {
                     <div className="hub-visual">
                         <div className="hub-image-stack">
                             <div className="hub-img-main">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
+                                <Image
                                     src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&q=85&fit=crop"
                                     alt="Interns collaborating and learning"
+                                    fill
+                                    sizes="(max-width: 900px) 90vw, 35vw"
+                                    className="object-cover"
                                 />
                             </div>
                             <div className="hub-img-accent">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
+                                <Image
                                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80&fit=crop"
                                     alt="Mentorship and career growth"
+                                    fill
+                                    sizes="(max-width: 900px) 50vw, 28vw"
+                                    className="object-cover"
                                 />
                             </div>
                             {/* Floating "Free" badge */}
@@ -71,7 +77,7 @@ export default function Hub() {
                         </h2>
 
                         <p style={{ fontSize: 16, color: "var(--text-mid)", lineHeight: 1.75, marginBottom: 8 }}>
-                            <strong>Internship with JuneHires</strong> is not a generic internship — it&apos;s
+                            Internship with JuneHire is not a generic internship - it&apos;s
                             aimed at HR and EA profiles starting their careers. Learn on real work, with
                             mentorship, completely free.
                         </p>
@@ -95,7 +101,9 @@ export default function Hub() {
 
                         <div style={{ marginTop: 40, display: "flex", gap: 12, flexWrap: "wrap" }}>
                             <a
-                                href="mailto:recruiter@junehires.com?subject=Internship%20Application%20-%20JuneHires"
+                                href={GOOGLE_FORM_SHORT_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="btn btn-primary"
                                 id="hub-apply-cta"
                             >

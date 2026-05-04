@@ -15,9 +15,9 @@ export default function HomePage() {
         <div className="container">
           <div className="stats-band-inner">
             {[
-              { value: "500+", label: "Candidates Placed" },
-              { value: "100%", label: "Free Internships" },
-              { value: "50+", label: "Companies Trust Us" },
+              { value: "50+", label: "Candidates Placed" },
+              { value: "100%", label: "Free Internship Training" },
+              { value: "10+", label: "Companies Trust Us" },
               { value: "4.9★", label: "Average Rating" },
             ].map((s) => (
               <div key={s.label} className="stats-band-item">
@@ -32,7 +32,7 @@ export default function HomePage() {
       {/* Quick highlights */}
       <section className="quick-highlights">
         <div className="container">
-          <div style={{ textAlign: "center", maxWidth: 600, margin: "0 auto 56px" }}>
+          <div className="section-intro-block section-intro-block--600">
             <span className="eyebrow" style={{ justifyContent: "center" }}>
               <span className="eyebrow-dot" />
               What We Offer
@@ -86,7 +86,7 @@ export default function HomePage() {
       {/* Featured Testimonials (show only 3) */}
       <Testimonials limit={3} />
 
-      <CTASection />
+      <CTASection recruiterEmailCopy />
     </>
   );
 }
