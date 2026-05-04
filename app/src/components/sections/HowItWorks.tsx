@@ -72,7 +72,7 @@ export default function HowItWorks() {
                 >
                     <p className="text-[#6A6A85] text-sm">
                         Average time from brief to onboarding:{" "}
-                        <span className="text-[#F5A623] font-semibold">under 7 days.</span>
+                        <span className="text-[#F5A623] font-semibold">under 30 days.</span>
                     </p>
                 </motion.div>
             </div>

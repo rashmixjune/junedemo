@@ -171,7 +171,7 @@ export default function ServicesPage() {
 
                     <p style={{ textAlign: "center", marginTop: 32, fontSize: 15, color: "var(--text-mid)" }}>
                         Average time from brief to onboarding:{" "}
-                        <strong style={{ color: "var(--amber)" }}>under 7 days.</strong>
+                        <strong style={{ color: "var(--amber)" }}>under 30 days.</strong>
                     </p>
                 </div>
             </section>

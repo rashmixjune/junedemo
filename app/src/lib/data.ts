@@ -105,7 +105,7 @@ export const steps = [
 export const stats = [
     { value: 500, suffix: "+", label: "Businesses Served", desc: "Across startups to enterprises" },
     { value: 2, prefix: "$", suffix: "M+", label: "Saved in Payroll", desc: "Compared to local hiring costs" },
-    { value: 7, suffix: " Days", label: "Average Time to Hire", desc: "From brief to offer letter" },
+    { value: 30, suffix: " Days", label: "Average Time to Hire", desc: "From brief to offer letter" },
     { value: 92, suffix: "%", label: "First-Try Success", desc: "Clients hire from first shortlist" },
 ];
 
